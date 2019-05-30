@@ -1,0 +1,15 @@
+<html>
+<head>
+<center>
+<title>Birthday App</title>
+</head>
+<body style="margin: 0px; background: #f88379;">
+<h1> 
+<%= if @birthday.strftime("%d-%m") == Time.now.strftime("%d-%m") 
+       "Happy Birthday!" 
+    else 
+       days =  (@birthday - DateTime.now).to_i + 1
+       "Your birthday is in #{days} days"
+    end %> </h1>
+</center>
+</html>

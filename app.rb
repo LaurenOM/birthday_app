@@ -1,8 +1,11 @@
 require 'sinatra'
 
-post '/' do 
-  p params
-  @name = params[:name]
-  @birthday = params[:birthday]
+get '/' do 
   erb(:index)
 end 
+
+post '/birthday' do 
+  @name = params[:name]
+  @birthday = Date.parse params[:birthday]
+  erb(:birthday)
+end
